@@ -1,0 +1,140 @@
+/* إعدادات عامة */
+body {
+  font-family: "Cairo", sans-serif;
+  background: linear-gradient(135deg, #f3f4f7, #e1e2e5);
+  display: flex;
+  flex-direction: column; /* الساعة فوق الآلة */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* الساعة */
+.clock-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.clock-container h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.clock-container #Date {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  color: #fff;
+  background-color: #4f46e5;
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* الآلة الحاسبة */
+.calculator {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 320px;
+  text-align: center;
+}
+
+.display {
+  margin-bottom: 15px;
+}
+
+.display input {
+  width: 90%;
+  height: 60px;
+  font-size: 1.8rem;
+  text-align: right;
+  border: none;
+  background: #f9fafc;
+  border-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  outline: none;
+}
+
+/* أزرار الآلة */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover { background: #e5e7eb; transform: scale(1.05); }
+
+.operator {
+  background: #4f46e5;
+  color: #fff;
+}
+
+.operator:hover { background: #4338ca; }
+
+.equal {
+  background: #16a34a;
+  color: #fff;
+  grid-column: span 2;
+}
+
+.equal:hover { background: #15803d; }
+
+#clear {
+  background: #dc2626;
+  color: #fff;
+}
+
+#clear:hover { background: #b91c1c; }
+
+/* تأثير النتيجة */
+.display input.flash {
+  animation: goldFlash 0.5s ease-in-out;
+  box-shadow: 0 0 20px 5px gold;
+}
+
+@keyframes goldFlash {
+  0% { background-color: #fff7d1; box-shadow: 0 0 20px 5px gold; }
+  50% { background-color: #ffe98a; box-shadow: 0 0 25px 10px gold; }
+  100% { background-color: #f9fafc; box-shadow: none; }
+}
+
+/* الوضع الداكن */
+body.dark {
+  background: linear-gradient(135deg, #111827, #1f2937);
+}
+
+body.dark .calculator { background: #1f2937; box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+
+body.dark .display input { background: #111827; color: #fff; box-shadow: inset 0 2px 4px rgba(255,255,255,0.1); }
+
+body.dark .btn { background: #374151; color: #f9fafb; }
+body.dark .btn:hover { background: #4b5563; }
+
+body.dark .operator { background: #6366f1; }
+body.dark .equal { background: #22c55e; }
+body.dark #clear { background: #ef4444; }
+
+body.dark .display input.flash {
+  animation: goldFlashDark 0.5s ease-in-out;
+}
+
+@keyframes goldFlashDark {
+  0% { background-color: #b8860b; box-shadow: 0 0 25px 8px gold; }
+  50% { background-color: #ffd700; box-shadow: 0 0 30px 12px gold; }
+  100% { background-color: #111827; box-shadow: none; }
+}
